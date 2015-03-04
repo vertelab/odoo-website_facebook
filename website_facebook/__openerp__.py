@@ -29,7 +29,7 @@ Share Your Website Posts On Facebook With Control.
 """,
     'author': 'Vertel AB',
     'website': 'http://www.vertel.se',
-    'depends': ['website'],
+    'depends': ['base','website'],
     'data': ['website_facebook_view.xml',
     ],
 
