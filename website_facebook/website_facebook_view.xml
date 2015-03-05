@@ -8,35 +8,39 @@
 
                 </head>
                 <body>
-                <t t-call="website.layout">
-                    <div id="wrap" class="oe_structure oe_empty"></div>
-                </t>
-                
-                <script>
+                    <!--Send button-->
+                    <script>
                     window.fbAsyncInit = function() {
                         FB.init({
-                          appId      : '206985932827386',
-                          xfbml      : true,
-                          version    : 'v2.2'
+                        appId      : '206985932827386',
+                        xfbml      : true,
+                        version    : 'v2.2'
                         });
                     };
 
-                        (function(d, s, id){
-                            var js, fjs = d.getElementsByTagName(s)[0];
-                            if (d.getElementById(id)) {return;}
-                            js = d.createElement(s); js.id = id;
-                            js.src = "//connect.facebook.net/en_US/sdk.js";
-                            fjs.parentNode.insertBefore(js, fjs);
+                        (function(d, s, id) {
+                          var js, fjs = d.getElementsByTagName(s)[0];
+                          if (d.getElementById(id)) return;
+                          js = d.createElement(s); js.id = id;
+                          js.src = "//connect.facebook.net/en_US/sdk.js";
+                          fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));
-                </script>  
-                
-                <div
-                    class="fb-like"
-                    data-send="true"
-                    data-width="450"
-                    data-show-faces="true">
-                </div>      
-                        
+                    </script> 
+                    
+                       
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="mb32 mt16">
+                            <div class="container">
+                                
+                                <!--Write/Send Facebook Button-->
+                                <div class="fb-send" data-href="http://vertel.se" data-colorscheme="light"></div>
+
+                                <div id="fb-root"></div>
+                            </div>
+                        </section>        
+                    </div>
+                </t>          
                 </body>
             </html>
         </template>
