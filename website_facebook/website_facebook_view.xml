@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
+        <template id="layout" inherit_id="website.layout">
+            <xpath expr='//li[@class="dropdown"]' position="before" >
+                <li>
+                    <a href="/fb">
+                        <span>Facebook</span>
+                    </a>
+                </li>
+            </xpath>
+        </template>
+        
         <template id="facebook_website" name="Facebook Website">
             &lt;!DOCTYPE html&gt;
             <html style="height: 100%">
@@ -27,18 +37,41 @@
                         }(document, 'script', 'facebook-jssdk'));
                     </script> 
                     
+                    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                    
                        
                 <t t-call="website.layout">
                     <div id="wrap" class="oe_structure oe_empty">
                         <section class="mb32 mt16">
                             <div class="container">
                                 
+                        <div class="mainlogo timerhide">
+                            <div class="container clear">
+                                <div id="access" role="navigation">
+                                    <div class="menu-header">
+                                        <ul id="menu-main" class="menu">
+                                            <li id="menu-item-771" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-771">
+                                                <a href="http://www.thearabnights.com">Home</a>
+                                            </li>
+                                            <li id="menu-item-773" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-773">
+                                                <a href="http://www.thearabnights.com/?cat=3">NEWS</a>
+                                            </li>
+                                            <li id="menu-item-772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-772">
+                                                <a href="#">ARTISTS</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                
                                 <!--Write/Send Facebook Button-->
                                 <div class="fb-send" data-href="http://vertel.se" data-colorscheme="light"></div>
 
                                 <div id="fb-root"></div>
                             </div>
-                        </section>        
+                        </section>
+   
                     </div>
                 </t>          
                 </body>
