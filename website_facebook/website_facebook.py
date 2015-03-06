@@ -28,10 +28,9 @@ import openerp.tools
 import werkzeug
 
 
-class website_facebook(http.Controller):
-        
+class website_facebook(http.Controller):      
     @http.route(['/fb','/fb/<model("res.users"):user>'], type='http', auth="user", website=True)
-    def facebook_website(self, user=False, **post):
+    def facebook_header(self, user=False, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         if not user:
             return werkzeug.utils.redirect("/fb/%s" %uid,302)
@@ -40,5 +39,5 @@ class website_facebook(http.Controller):
             'user' : user,
             }
 
-        return request.render('website_facebook.facebook_website', ctx)
+        return request.render('website_facebook.facebook_header', ctx)
         

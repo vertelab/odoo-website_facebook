@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="facebook_website" name="Facebook Website">
+        <template id="facebook_header" name="Facebook Header">
             <t t-call="website.layout"> 
                 <html style="height: 100%">
                     <head>
@@ -51,7 +51,7 @@
                         </style>
                     </head>
                     <body>
-                        
+                        <!--Facebook Header, Profile Picture, Menu Bar -->
                         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
                             <div class="container">
                                 <div class="fb-profile">
@@ -87,6 +87,9 @@
                                     </div> <!--container-->
                                 </div> <!--fb-profile-->
                             </div> <!-- /container -->  
+                            
+                            
+                            
                     </body>
                 </html>
             </t>
