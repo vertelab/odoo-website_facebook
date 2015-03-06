@@ -39,17 +39,6 @@ class website_facebook(http.Controller):
         ctx = {
             'user' : user,
             }
-    
 
         return request.render('website_facebook.facebook_website', ctx)
         
-    @http.route(['/fb/header','/fb/<model("res.users"):user>'], type='http', auth="user", website=True)
-    def fb_header(self, user=False, **post):
-        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-        if not user:
-            return werkzeug.utils.redirect("/fb/header/%s" %uid,302)
-            
-        ctx = {
-            'user' : user,
-            }
-        return request.render('website_facebook.fb_header', ctx)
