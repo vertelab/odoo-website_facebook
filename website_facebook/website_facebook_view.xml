@@ -72,7 +72,7 @@
                                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                                 <ul class="nav navbar-nav">
                                                     <li><a href="https://apps.facebook.com/vertelab"><span class="fa fa-home fa-fw"></span>Home</a></li>
-                                                    <li><a href="#"><span class="fa fa-book fa-fw"></span>Blog</a></li>
+                                                    <li><a href="/fb/blog"><span class="fa fa-book fa-fw"></span>Blog</a></li>
                                                     <li><a href="#"><span class="fa fa-calendar fa-fw"></span>Calendar</a></li>
                                                     <li><a href="#"><span class="fa fa-cogs fa-fw"></span>Service</a></li>
                                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
