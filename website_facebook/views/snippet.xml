@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="facebook_snippet_id" inherit_id="website.snippets" name="Facebook snippet">
+    <xpath expr="//ul[@class='nav navbar-nav nav-tabs']" position="inside">
+
+         <li class=""><a href="#snippet_facebook" data-toggle="tab">facebook</a></li>
+            <div class="tab-content">
+        <div id="snippet_facebook" class="tab-pane">
+    
+<!-- content goes here -->
+            
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_parallax.png"/>
+            <span class="oe_snippet_thumbnail_title">Parallax</span>
+        </div>
+        <section class="oe_snippet_body parallax"
+                style="background-image: url('/website/static/src/img/banner/mountains.jpg')"
+                data-scroll-background-ratio="0.3">
+                <div><div class="oe_structure"/></div>
+        </section>
+    </div>
+            
+<!-- dont do changes efter this -->            
+       
+        </div>   
+        </div>         
+    </xpath>
+</template>
+</data>
+</openerp>
