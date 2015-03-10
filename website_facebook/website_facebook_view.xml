@@ -1,53 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="facebook_header" name="Facebook Header">
-            <t t-call="website.layout"> 
-                <html style="height: 100%">
-                    <head>
-                        <style>
-                                /* ==========================================================================
-                                   Author's custom styles
-                                   ========================================================================== */
+        <!--Layout Template-->
+        <template id="website_facebook.layout" customize_show="True" name="Facebook Layout">
+            <t t-call="website.layout">
+                <div id="fb_header"></div>
+            </t>
+        </template>
+        
+        <!--Facebook Header Template Connected To Facebook Layout-->
+        <template id="website_facebook.facebook_header" inherit_id="website_facebook.layout" customize_show="True" name="Facebook Header">
+            <xpath expr="//div[@id='fb_header']" position="replace">
+            <html>
+                 <head>
+                     <style>
+                        body
+                            {
+                                font-family: 'Open Sans', sans-serif;
+                            }
 
-                                body
-                                {
-                                    font-family: 'Open Sans', sans-serif;
-                                }
+                            .fb-profile img.fb-image-lg{
+                                z-index: 0;
+                                width: 100%;  
+                                margin-bottom: 10px;
+                            }
 
-                                .fb-profile img.fb-image-lg{
-                                    z-index: 0;
-                                    width: 100%;  
-                                    margin-bottom: 10px;
-                                }
+                            .fb-image-profile
+                            {
+                                margin: -90px 10px 0px 50px;
+                                z-index: 9;
+                                width: 20%; 
+                            }
 
-                                .fb-image-profile
-                                {
-                                    margin: -90px 10px 0px 50px;
-                                    z-index: 9;
-                                    width: 20%; 
-                                }
+                            @media (max-width:768px)
+                            {  
+                                fb-profile-text>h1{
+                                font-weight: 700;
+                                font-size:16px;
+                            }
 
-                                @media (max-width:768px)
-                                {
-                                    
-                                .fb-profile-text>h1{
-                                    font-weight: 700;
-                                    font-size:16px;
-                                }
-
-                                .fb-image-profile
-                                {
-                                    margin: -45px 10px 0px 25px;
-                                    z-index: 9;
-                                    width: 20%; 
-                                }
-                                }
-                            
-                            
-                            
-                            .label,.glyphicon { margin-right:5px; }
-                            
+                            .fb-image-profile
+                            {
+                                margin: -45px 10px 0px 25px;
+                                z-index: 9;
+                                width: 20%; 
+                            }
+                            }
+                                
+                                
+                                
+                        .label,.glyphicon { margin-right:5px; }
+                                
                         </style>
                     </head>
                     <body>
@@ -65,12 +68,12 @@
                                         <nav class="navbar" role="navigation">
                                             <div class="navbar-header">
                                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
-                                                    class="icon-bar"></span><span class="icon-bar"></span>
+                                                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                                            class="icon-bar"></span><span class="icon-bar"></span>
                                                 </button>
                                             </div>
                                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                                <ul class="nav navbar-nav">
+                                                <ul class="nav navbar-nav" id="fb_menu">
                                                     <li><a href="https://apps.facebook.com/vertelab"><span class="fa fa-home fa-fw"></span>Home</a></li>
                                                     <li><a href="/fb/blog"><span class="fa fa-book fa-fw"></span>Blog</a></li>
                                                     <li><a href="#"><span class="fa fa-calendar fa-fw"></span>Calendar</a></li>
@@ -87,12 +90,9 @@
                                     </div> <!--container-->
                                 </div> <!--fb-profile-->
                             </div> <!-- /container -->  
-                            
-                            
-                            
                     </body>
                 </html>
-            </t>
+            </xpath>
         </template>
     </data>
 </openerp>
