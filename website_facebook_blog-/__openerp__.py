@@ -31,6 +31,7 @@ Share Your Website Posts On Facebook With Control.
     'website': 'http://www.vertel.se',
     'depends': ['base','website','website_facebook'],
     'data': ['website_facebook_blog_view.xml',
+    'snippet.xml'
              
     ],
 

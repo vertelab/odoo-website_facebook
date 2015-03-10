@@ -19,6 +19,7 @@ from openerp.http import request
 from openerp import SUPERUSER_ID
 import openerp.tools
 import werkzeug
+import facebook
 
 
 class website_facebook_blog(http.Controller):      
