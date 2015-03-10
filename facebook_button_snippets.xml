@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <html style="height: 100%">
+            <body>
+                
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+                
+                <!--Embedded posts-->
+                <div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="500"></div>
+                
+                <br/><br/>
+                
+                <!--Like/Share button-->
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                
+                <!--Share button-->
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+                
+                <!--Send button-->
+                <div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/" data-colorscheme="light"></div>
+                
+                <br/><br/>
+                
+                <!--Follow button-->
+                <div class="fb-follow" data-href="https://www.facebook.com/zuck" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+                
+                <br/><br/>
+                
+                <!--Comments-->
+                <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="5" data-colorscheme="light"></div>
+                
+                <br/><br/>
+                
+                <!--Activity Feed-->
+                <div class="fb-activity" data-site="developers.facebook.com" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+                
+                <!--Recommendations Feed-->
+                <div class="fb-recommendations" data-site="developers.facebook.com" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+                
+                <br/><br/><br/>
+                
+                <!--Like Box-->
+                <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                 
+                 <br/><br/><br/><br/>
+                 
+                <!--Facepile-->
+                <div class="fb-facepile" data-href="https://www.facebook.com/FacebookDevelopers" data-max-rows="1" data-colorscheme="light" data-size="medium" data-show-count="true"></div>
+                
+                <br/><br/><br/><br/><br/><br/>
+           </body>
+        </html>
+    </data>
+</openerp>
+

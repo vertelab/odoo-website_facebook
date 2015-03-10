@@ -26,6 +26,7 @@ from openerp.http import request
 from openerp import SUPERUSER_ID
 import openerp.tools
 import werkzeug
+import facebook
 
 
 class website_facebook(http.Controller):      
@@ -38,6 +39,6 @@ class website_facebook(http.Controller):
         ctx = {
             'user' : user,
             }
-
-        return request.render('website_facebook.facebook_header', ctx)
+        return request.render('website_facebook.facebook_layout', ctx)    
+    
         
