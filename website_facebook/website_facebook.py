@@ -39,6 +39,6 @@ class website_facebook(http.Controller):
         ctx = {
             'user' : user,
             }
-        return request.render('website_facebook.facebook_layout', ctx)    
+        return request.render('website_facebook.layout', ctx)    
     
         
