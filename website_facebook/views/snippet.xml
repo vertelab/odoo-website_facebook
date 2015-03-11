@@ -1,75 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
 <data>
-    <template id="css" inherit_id="website.theme"> 
+    <template id="website_facebook.css" inherit_id="website.theme" customize_show="True" name="Snippet CSS"> 
     <xpath expr="//link[@href='/website/static/src/css/website.css']" position="after">
-        <xpath expr="//link[@href='/website/static/src/js/website.js']" position="after">
-            
-        <!--add  <link rel="stylesheet" href="/directory/filename"/> when inputing new css/js files-->
-        
-        <!-- css -->
-        <link rel="stylesheet" href="/website_facebook/static/src/css/snippets.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/social_share.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/event.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/box_material.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/update_status.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/review.css"/>
-        
-        <!-- js -->
-        <link rel="stylesheet" href="/website_facebook/static/src/js/update_status.js"/>
-        
-        </xpath>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/snippets.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/social_share.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/event.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/review.css" t-ignore="true"/>
     </xpath>  
     </template>
-
+    
 <template id="facebook_snippet_id" inherit_id="website.snippets" name="Facebook snippet">
     <xpath expr="//ul[@class='nav navbar-nav nav-tabs']" position="inside">
-    
          <li class=""><a href="#snippet_facebook" data-toggle="tab">Facebook</a></li>
     </xpath>
     <xpath expr="//div[@class='tab-content']">
-                    
         <div id="snippet_facebook" class="tab-pane">
 
 
 <!-- content goes here -->
-
-<!--Update Status-->
-
-    <div>
-        <div class="oe_snippet_thumbnail">
-            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_jumbotron.png"/>
-            <span class="oe_snippet_thumbnail_title">Update Status</span>
-        </div>
-        <section class="oe_snippet_body mb32 mt16">        
-<div class="container">
-
-    <div class="row">
-        <div class="col-md-offset-3 col-md-6 col-xs-12">
-            <div class="well well-sm well-social-post">
-        <form>
-            <ul class="list-inline" id='list_PostActions'>
-                <li class='active'><a href='#'>Update status</a></li>
-                <li><a href='#'>Add photos/Video</a></li>
-                <li><a href='#'>Create photo album</a></li>
-            </ul>
-            <textarea class="form-control" placeholder="What's in your mind?"></textarea>
-            <ul class='list-inline post-actions'>
-                <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
-                <li><a href="#" class='glyphicon glyphicon-user'></a></li>
-                <li><a href="#" class='glyphicon glyphicon-map-marker'></a></li>
-                <li class='pull-right'><a href="#" class='btn btn-primary btn-xs'>Post</a></li>
-            </ul>
-        </form>
-            </div>
-        </div>
-    </div>
-</div>                                                            
-
-</section>
-</div>
 
 <!--social share snippet-->
     <div>
@@ -129,47 +80,6 @@
             </div>
         </div>
 	</div>
-</section>
-</div>
-
-
-<!--Box snippet-->
-    <div>
-        <div class="oe_snippet_thumbnail">
-            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_jumbotron.png"/>
-            <span class="oe_snippet_thumbnail_title">Box Material</span>
-        </div>
-        <section class="oe_snippet_body mb32 mt16">        
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="box">
-                <div class="box-icon">
-                    <span class="fa fa-4x fa-html5"></span>
-                </div>
-                <div class="info">
-                    <h4 class="text-center">Title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                    <a href="" class="btn">Link</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div class="box">
-                <div class="box-icon">
-                    <span class="fa fa-4x fa-css3"></span>
-                </div>
-                <div class="info">
-                    <h4 class="text-center">Title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                    <a href="" class="btn">Link</a>
-                </div>
-            </div>
-        </div>
-	</div>
-</div>
 </section>
 </div>
 
