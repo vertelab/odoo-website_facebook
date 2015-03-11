@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <template id="website_facebook_blog.css" inherit_id="website.theme" customize_show="True" name="Blog Snippet CSS"> 
+    <xpath expr="//link[@href='/website/static/src/css/website.css']" position="after">
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/snippets.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/timeline.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/social_share.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/event.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/contact.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook_blog/static/src/css/review.css" t-ignore="true"/>
+    </xpath>  
+    </template>
+    
+<template id="facebook_snippet_blog_id" inherit_id="website.snippets" name="Facebook Blog snippet">
+    <xpath expr="//ul[@class='nav navbar-nav nav-tabs']" position="inside">
+         <li class=""><a href="#snippet_facebook_blog" data-toggle="tab">Facebook Blog</a></li>
+    </xpath>
+    <xpath expr="//div[@class='tab-content']">
+        <div id="snippet_facebook_blog" class="tab-pane">
+
+
+<!-- content goes here -->
+
+<!--social share snippet-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Social Share</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+            
+
+<div class="container">
+	<div class="row mobile-social-share">
+    		<div class="col-md-9">
+                <h3>Share this content</h3>
+            </div>
+            <div id="socialHolder" class="col-md-3">
+        		<div id="socialShare" class="btn-group share-group">
+                    <a data-toggle="dropdown" class="btn btn-info">
+                         <i class="fa fa-share-alt fa-inverse"></i>
+                    </a>
+    				<button href="#" data-toggle="dropdown" class="btn btn-info dropdown-toggle share">
+    					<span class="caret"></span>
+    				</button>
+    				<ul class="dropdown-menu">
+        				<li>
+    					    <a data-original-title="Twitter" rel="tooltip"  href="https://twitter.com/intent/tweet?text={title}&amp;url={url}" class="btn btn-twitter" data-placement="left">
+								<i class="fa fa-twitter"></i>
+							</a>
+    					</li>
+    					<li>
+    						<a data-original-title="Facebook" rel="tooltip"  href="https://www.facebook.com/sharer/sharer.php?u={url}" class="btn btn-facebook" data-placement="left">
+								<i class="fa fa-facebook"></i>
+							</a>
+    					</li>					
+    					<li>
+    						<a data-original-title="Google+" rel="tooltip"  href="https://plus.google.com/share?url={url}" class="btn btn-google" data-placement="left">
+								<i class="fa fa-google-plus"></i>
+							</a>
+    					</li>
+    				    <li>
+    						<a data-original-title="LinkedIn" rel="tooltip"  href="http://www.linkedin.com/shareArticle?mini=true&amp;url={url}&amp;title={title}&amp;" class="btn btn-linkedin" data-placement="left">
+								<i class="fa fa-linkedin"></i>
+							</a>
+    					</li>
+    					<li>
+    						<a data-original-title="Pinterest" rel="tooltip"  class="btn btn-pinterest" data-placement="left">
+								<i class="fa fa-pinterest"></i>
+							</a>
+    					</li>
+                        <li>
+    						<a  data-original-title="Email" rel="tooltip" class="btn btn-mail" data-placement="left">
+								<i class="fa fa-envelope"></i>
+							</a>
+    					</li>
+                    </ul>
+    			</div>
+            </div>
+        </div>
+	</div>
+</section>
+</div>
+
+<!--event snippet-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_banner.png"/>
+            <span class="oe_snippet_thumbnail_title">Event</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+
+    <div class="container">
+<!-- Start your code here -->
+<div class="panel panel-default event">
+  <div class="panel-body">
+    <div class="rsvp col-xs-2 col-sm-2">
+      <i>18</i>
+      <i>nov</i>
+      <div class="hidden-xs">
+        <span class="fa fa-thumbs-up fa-2x"></span>
+        <span class="fa fa-thumbs-down fa-2x"></span>
+      </div>
+    </div>
+    <div class="info col-xs-8 col-sm-7">
+      Event Title
+      <div class="visible-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elitero..</div>
+      <div class="hidden-xs">
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Location</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="location">Location</div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis feugiat sem, eu sagittis libero. Duis non odio ut nibh volutpat tempus eget interdum elit. 
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="author col-xs-2 col-sm-3">
+        <div class="profile-image">
+            <img src="http://api.randomuser.me/portraits/med/men/71.jpg"/>
+        </div>
+        <div class="profile hidden-xs">
+            <strong>Robert White</strong>
+            <article>Event leader and founder of this group</article>
+            <div class="links hidden-sm">
+              <i class="fa fa-github-square fa-2x col-xs-3"></i>
+              <i class="fa fa-google-plus-square fa-2x col-xs-3"></i>
+              <i class="fa fa-facebook-square fa-2x col-xs-3"></i>
+              <i class="fa fa-linkedin-square  fa-2x col-xs-3"></i>
+            </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</div>
+
+<!--Timeline-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_image_text.png"/>
+            <span class="oe_snippet_thumbnail_title">Time Line</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+
+	<div class="row">
+		<h2>Time Line</h2>
+	</div>
+    <div class="qa-message-list" id="wallmessages">
+    				<div class="message-item" id="m16">
+						<div class="message-inner">
+							<div class="message-head clearfix">
+								<div class="avatar pull-left"><a href="./index.php?qa=user&amp;qa_1=Oleg+Kolesnichenko"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"/></a></div>
+								<div class="user-detail">
+									<h5 class="handle">Anders Wallenqvist</h5>
+									<div class="post-meta">
+										<div class="asker-meta">
+											<span class="qa-message-what"></span>
+											<span class="qa-message-when">
+												<span class="qa-message-when-data">Mars 11</span>
+											</span>
+											<span class="qa-message-who">
+												<span class="qa-message-who-pad">by </span>
+												<span class="qa-message-who-data"><a href="./index.php?qa=user&amp;qa_1=Oleg+Kolesnichenko">Anders Wallenqvist</a></span>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="qa-message-content">
+								Scrum meeting
+							</div>
+					</div></div>		
+				</div>
+            </div>
+        </section>
+    </div>
+               
+                <!--Embedded posts-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Embedded Post</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="500"></div>
+</div>               
+        </section>
+</div>
+                
+                <!--Like/Share button-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Like/Share</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</div>               
+        </section>
+</div>
+
+                <!--Share button-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Share</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count"></div>
+</div>               
+        </section>
+</div>
+                
+                <!--Send button-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Send</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/" data-colorscheme="light"></div>
+</div>               
+        </section>
+</div>
+                
+                <!--Follow button-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Follow</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-follow" data-href="https://www.facebook.com/zuck" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+</div>               
+        </section>
+</div>
+
+                
+                <!--Comments-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Comments</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-numposts="5" data-colorscheme="light"></div>
+</div>               
+        </section>
+</div>
+
+                
+                <!--Activity Feed-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Activity</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-activity" data-site="developers.facebook.com" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+</div>               
+        </section>
+</div>
+                
+                <!--Recommendations Feed-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Recommendations</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-recommendations" data-site="developers.facebook.com" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+</div>               
+        </section>
+</div>
+
+                
+                <!--Like Box-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Like-box</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+</div>               
+        </section>
+</div>
+                 
+                <!--Facepile-->
+ 
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_button.png"/>
+            <span class="oe_snippet_thumbnail_title">Facepile</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    	<div class="row">
+
+        </div>
+                <div id="fb-root"></div>
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.0";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+                </script>
+<div class="fb-facepile" data-href="https://www.facebook.com/FacebookDevelopers" data-max-rows="1" data-colorscheme="light" data-size="medium" data-show-count="true"></div>
+</div>               
+        </section>
+</div>
+
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_jumbotron.png"/>
+            <span class="oe_snippet_thumbnail_title">Contact Form</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Contact us <small>Feel free to contact us</small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+                <strong>Twitter, Inc.</strong><br/>
+                795 Folsom Ave, Suite 600<br/>
+                San Francisco, CA 94107<br/>
+                <abbr title="Phone">
+                    P:</abbr>
+                (123) 456-7890
+            </address>
+            <address>
+                <strong>Full Name</strong><br/>
+                <a href="mailto:#">first.last@example.com</a>
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+</div>
+
+<!--What Customers Said About Us-->
+<div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_image_text.png"/>
+            <span class="oe_snippet_thumbnail_title">RESPONSE</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+        <div class="container">
+        <div class="row">
+        <h2 class="text-center text-primary">What our clients said about us?</h2>
+        <hr/>
+    	<div class="col-md-10 col-md-offset-1">
+			<div class="row testimonials">
+				<div class="col-sm-4">
+					<blockquote>
+						<p class="clients-words">Hi there, We just bought bootdey is a nice gallery of free bootstrap snippet</p>
+						<span class="clients-name text-primary">— Amanda corey</span>
+						<img class="img-circle img-thumbnail" src="http://lorempixel.com/400/400/people/1/"/>
+					</blockquote>
+				</div>
+				<div class="col-sm-4">
+					<blockquote>
+						<p class="clients-words">Awesome Bootstrap snippets! Check it out! </p>
+						<span class="clients-name text-primary">— Factory nn (@facnnteam)</span>
+						<img class="img-circle img-thumbnail" src="http://lorempixel.com/400/400/people/5/"/>
+					</blockquote>
+				</div>
+				<div class="col-sm-4">
+					<blockquote>
+						<p  class="clients-words">Bootdey looks amazing, i copy paste my snippets for other users very easy, bootdey looks simple</p>
+						<span class="clients-name text-primary">— Big daniel mont</span>
+						<img class="img-circle img-thumbnail" src="http://lorempixel.com/400/400/people/4/"/>
+					</blockquote>
+				</div>
+			</div><!--/.row-->
+		</div><!--/.col-->	
+	</div><!--/.row-->
+    </div>
+</section>
+</div>
+
+<!-- dont do changes efter this -->            
+       
+        </div>   
+    </xpath>
+</template>
+</data>
+</openerp>
+
+<!-- add before snippts-->
+<!--
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
+            <span class="oe_snippet_thumbnail_title">NAME</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+-->
+<!--add after snippets-->
+<!--
+</section>
+</div>
+-->
