@@ -7,11 +7,18 @@
             
         <!--add  <link rel="stylesheet" href="/directory/filename"/> when inputing new css/js files-->
         
+        <!-- css -->
         <link rel="stylesheet" href="/website_facebook/static/src/css/snippets.css"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/social_share.css"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/event.css"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/box_material.css"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/update_status.css"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css"/>
+        
+        <!-- js -->
+        <link rel="stylesheet" href="/website_facebook/static/src/js/update_status.js"/>
+        
         </xpath>
     </xpath>  
     </template>
@@ -27,6 +34,41 @@
 
 
 <!-- content goes here -->
+
+<!--Update Status-->
+
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_jumbotron.png"/>
+            <span class="oe_snippet_thumbnail_title">Update Status</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-xs-12">
+            <div class="well well-sm well-social-post">
+        <form>
+            <ul class="list-inline" id='list_PostActions'>
+                <li class='active'><a href='#'>Update status</a></li>
+                <li><a href='#'>Add photos/Video</a></li>
+                <li><a href='#'>Create photo album</a></li>
+            </ul>
+            <textarea class="form-control" placeholder="What's in your mind?"></textarea>
+            <ul class='list-inline post-actions'>
+                <li><a href="#"><span class="glyphicon glyphicon-camera"></span></a></li>
+                <li><a href="#" class='glyphicon glyphicon-user'></a></li>
+                <li><a href="#" class='glyphicon glyphicon-map-marker'></a></li>
+                <li class='pull-right'><a href="#" class='btn btn-primary btn-xs'>Post</a></li>
+            </ul>
+        </form>
+            </div>
+        </div>
+    </div>
+</div>                                                            
+
+</section>
+</div>
 
 <!--social share snippet-->
     <div>
@@ -88,6 +130,7 @@
 	</div>
 </section>
 </div>
+
 
 <!--Box snippet-->
     <div>
@@ -491,6 +534,93 @@
 <div class="fb-facepile" data-href="https://www.facebook.com/FacebookDevelopers" data-max-rows="1" data-colorscheme="light" data-size="medium" data-show-count="true"></div>
 </div>               
         </section>
+</div>
+
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_jumbotron.png"/>
+            <span class="oe_snippet_thumbnail_title">Contact Form</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Contact us <small>Feel free to contact us</small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+                <strong>Twitter, Inc.</strong><br/>
+                795 Folsom Ave, Suite 600<br/>
+                San Francisco, CA 94107<br/>
+                <abbr title="Phone">
+                    P:</abbr>
+                (123) 456-7890
+            </address>
+            <address>
+                <strong>Full Name</strong><br/>
+                <a href="mailto:#">first.last@example.com</a>
+            </address>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</section>
 </div>
 
 <!-- dont do changes efter this -->            
