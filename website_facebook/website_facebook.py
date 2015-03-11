@@ -30,15 +30,22 @@ import facebook
 
 
 class website_facebook(http.Controller):      
-    @http.route(['/fb','/fb/<model("res.users"):user>'], type='http', auth="user", website=True)
+    @http.route(['/fb'], type='http', auth="public", website=True)
     def facebook_header(self, user=False, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-        if not user:
-            return werkzeug.utils.redirect("/fb/%s" %uid,302)
            
         ctx = {
             'user' : user,
             }
-        return request.render('website_facebook.layout', ctx)    
+        return request.render('website_facebook.fb_page', ctx)   
+        
+    @http.route(['/fb/about'], type='http', auth="public", website=True)
+    def facebook_about(self, user=False, **post):
+        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
+           
+        ctx = {
+            'user' : user,
+            }
+        return request.render('website_facebook.about', ctx)  
     
         

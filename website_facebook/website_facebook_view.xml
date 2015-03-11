@@ -2,55 +2,66 @@
 <openerp>
     <data>
         <!--Layout Template-->
-        <template id="website_facebook.layout" customize_show="True" name="Facebook Layout">
-            <t t-call="website.layout">
+        <template id="website_facebook.layout" inherit_id="website.layout" name="Facebook Layout">
+            <xpath expr="//header" position="inside">
                 <div id="fb_header"></div>
+            </xpath>
+<!--
+            <xpath expr="//div[@class='navbar navbar-default navbar-static-top']" position="replace">
+            </xpath>
+-->
+        </template>
+        
+        
+        <template id="website_facebook.fb_page"  name="Facebook Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty"/>
             </t>
         </template>
         
         <!--Facebook Header Template Connected To Facebook Layout-->
         <template id="website_facebook.facebook_header" inherit_id="website_facebook.layout" customize_show="True" name="Facebook Header">
             <xpath expr="//div[@id='fb_header']" position="replace">
-            <html>
-                 <head>
-                     <style>
-                        body
-                            {
-                                font-family: 'Open Sans', sans-serif;
-                            }
+                <html>
+                    <head>
+                        <style>
+                            body
+                                {
+                                    font-family: 'Open Sans', sans-serif;
+                                }
 
-                            .fb-profile img.fb-image-lg{
-                                z-index: 0;
-                                width: 100%;  
-                                margin-bottom: 10px;
-                            }
+                                .fb-profile img.fb-image-lg{
+                                    z-index: 0;
+                                    width: 100%;  
+                                    margin-bottom: 10px;
+                                }
 
-                            .fb-image-profile
-                            {
-                                margin: -90px 10px 0px 50px;
-                                z-index: 9;
-                                width: 20%; 
-                            }
+                                .fb-image-profile
+                                {
+                                    margin: -90px 10px 0px 50px;
+                                    z-index: 9;
+                                    width: 20%; 
+                                }
 
-                            @media (max-width:768px)
-                            {  
-                                fb-profile-text>h1{
-                                font-weight: 700;
-                                font-size:16px;
-                            }
+                                @media (max-width:768px)
+                                {  
+                                    fb-profile-text>h1{
+                                    font-weight: 700;
+                                    font-size:16px;
+                                }
 
-                            .fb-image-profile
-                            {
-                                margin: -45px 10px 0px 25px;
-                                z-index: 9;
-                                width: 20%; 
-                            }
-                            }
-                                
-                                
-                                
-                        .label,.glyphicon { margin-right:5px; }
-                                
+                                .fb-image-profile
+                                {
+                                    margin: -45px 10px 0px 25px;
+                                    z-index: 9;
+                                    width: 20%; 
+                                }
+                                }
+                                    
+                                    
+                                    
+                            .label,.glyphicon { margin-right:5px; }
+                                    
                         </style>
                     </head>
                     <body>
@@ -74,16 +85,17 @@
                                             </div>
                                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                                 <ul class="nav navbar-nav" id="fb_menu">
-                                                    <li><a href="https://apps.facebook.com/vertelab"><span class="fa fa-home fa-fw"></span>Home</a></li>
-                                                    <li><a href="/fb/blog"><span class="fa fa-book fa-fw"></span>Blog</a></li>
+                                                    <li><a href="/fb"><span class="fa fa-home fa-fw"></span>Home</a></li>
                                                     <li><a href="#"><span class="fa fa-calendar fa-fw"></span>Calendar</a></li>
                                                     <li><a href="#"><span class="fa fa-cogs fa-fw"></span>Service</a></li>
+<!--
                                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
                                                         <ul class="dropdown-menu">
                                                             <li><a href="#">Photos</a></li>
                                                             <li><a href="#">Videos</a></li>
                                                         </ul>
                                                     </li>
+-->
                                                 </ul>
                                             </div>
                                         </nav>
@@ -92,6 +104,18 @@
                             </div> <!-- /container -->  
                     </body>
                 </html>
+            </xpath>
+        </template>
+        
+        <template id="website_facebook.about" name="Facebook About">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty"/>
+            </t>
+        </template>
+        
+        <template id="website_facebook.about_menu" inherit_id="website_facebook.facebook_header" priority="10" customize_show="True" active="False" name="Facebook About Menu">
+            <xpath expr="//ul[@id='fb_menu']/li[a/span[@class='fa fa-home fa-fw']]" position="after">
+                <li><a href="/fb/about"><span class="fa fa-pencil fa-fw"></span>About</a></li>
             </xpath>
         </template>
     </data>
