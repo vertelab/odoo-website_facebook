@@ -40,7 +40,7 @@ class website_facebook(http.Controller):
         return request.render('website_facebook.fb_page', ctx)   
         
     @http.route(['/fb/about','/<model("res.company"):company>/'], type='http', auth="public", website=True)
-    def facebook_about(self, user=False, company=False, **post):
+    def facebook_about(self, user=False, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
            
         ctx = {
