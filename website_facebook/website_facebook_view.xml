@@ -16,21 +16,23 @@
 -->
         </template>
         
-        <template id="website_facebook.fb_page"  name="Facebook Page">
+<!--
+        <template id="website_facebook.fb_page" name="Facebook Page">
             <t t-call="website.layout">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3 col-md-6 col-lg-4">
-                            <div id="wrap" class="oe_structure oe_empty"/>
+                        <div id="wrap" class="oe_structure oe_empty"/>
                         </div>
                         <div class="col-sm-9 col-md-6 col-lg-8">
-                            <div id="wrap" class="oe_structure oe_empty"/>
+                        <div id="wrap" class="oe_structure oe_empty"/>
                         </div>
                     </div>
                 </div>
             </t>
         </template>
-        
+-->
+
         <!--Facebook Header Template Connected To Facebook Layout-->
         <template id="website_facebook.facebook_header" inherit_id="website_facebook.layout" customize_show="True" active="False" name="Facebook Header">
             <xpath expr="//div[@id='fb_head']" position="after">
