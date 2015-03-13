@@ -160,7 +160,22 @@
                                                 </div>
                                             </div><hr/>
                                         </t>
+                                        
                                         <!--Company Address-->
+                                        <t t-if="res_company.partner_id.contact_address">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Address</strong></h10>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <t t-esc="res_company.partner_id.contact_address"/><br/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        
+                                        <!--Company Address-->
+                                        
+<!--
                                         <t t-if="res_company.street">
                                             <div class="row">
                                                 <div class="col-md-4">
@@ -171,7 +186,9 @@
                                                 </div>
                                             </div>
                                         </t>
+-->
                                         <!--Address 2-->
+<!--
                                         <t t-if="res_company.street2">
                                             <div class="row">
                                                 <div class="col-md-4"/>
@@ -180,19 +197,26 @@
                                                 </div>
                                             </div>
                                         </t>
+-->
                                         <!--City, State, Zip, Country-->
+<!--
                                         <t t-if="res_company.country_id.name or 
-                                                res_company.city or res_company.state_id.name or res_company.zip">
+                                                res_company.state_id.name or res_company.zip">
                                             <div class="row">
                                                 <div class="col-md-4"/>
                                                 <div class="col-md-8">
-                                                    <t t-esc="res_company.city"/>
+-->
+<!--
+                                                  res_company.city   <t t-esc="res_company.city"/>
+-->
+<!--
                                                     <t t-esc="res_company.state_id.name"/>
                                                     <t t-esc="res_company.zip"/><br/>
                                                     <t t-esc="res_company.country_id.name"/>
                                                 </div>
                                             </div><hr/>
                                         </t>
+-->
                                         <!--Company Website-->
                                         <t t-if="res_company.website">
                                             <div class="row">

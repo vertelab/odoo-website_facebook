@@ -28,7 +28,6 @@ import openerp.tools
 import werkzeug
 import facebook
 
-
 class website_facebook(http.Controller):      
     @http.route(['/fb'], type='http', auth="public", website=True)
     def facebook_header(self, user=False, **post):
