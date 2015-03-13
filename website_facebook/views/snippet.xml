@@ -3,17 +3,26 @@
 <data>
     <template id="website_facebook.css" inherit_id="website.theme" customize_show="True" name="Snippet CSS"> 
     <xpath expr="//link[@href='/website/static/src/css/website.css']" position="after">
+        <xpath expr="//link[@href='/website/static/src/js/website.js']" position="inside">
+            
         <link rel="stylesheet" href="/website_facebook/static/src/css/snippets.css" t-ignore="true"/>
-<!--
-        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>
--->
         <link rel="stylesheet" href="/website_facebook/static/src/css/social_share.css" t-ignore="true"/>
+<!--
         <link rel="stylesheet" href="/website_facebook/static/src/css/event.css" t-ignore="true"/>
+-->
+        <link rel="stylesheet" href="/website_facebook/static/src/css/event2.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/review.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>        
+
+        <script type="text/javascript" src="website_facebook/static/src/js/facebook.js"></script>
+<!--
+        <script type="text/javascript" src="website_facebook/static/src/js/timeline.js"></script>
+-->
+        </xpath>
     </xpath>  
     </template>
-    
+ 
 <template id="facebook_snippet_id" inherit_id="website.snippets" name="Facebook snippet">
     <xpath expr="//ul[@class='nav navbar-nav nav-tabs']" position="inside">
          <li class=""><a href="#snippet_facebook" data-toggle="tab">Facebook</a></li>
@@ -23,6 +32,31 @@
 
 
 <!-- content goes here -->
+
+<!--two row layout-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_title.png"/>
+            <span class="oe_snippet_thumbnail_title">Two Rows</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    <div class="row">
+    <ul class="timeline">
+        <li>
+            <div class="timeline-heading">            
+                <div id="wrap" class="oe_structure oe_empty"/>             
+            </div>
+        </li>
+        
+        <li  class="timeline-inverted">
+                <div id="wrap" class="oe_structure oe_empty"/>             
+        </li>        
+    </ul>
+    </div>
+</div>
+</section>
+</div>
 
 <!--social share snippet-->
     <div>
@@ -89,7 +123,7 @@
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_banner.png"/>
-            <span class="oe_snippet_thumbnail_title">Event</span>
+            <span class="oe_snippet_thumbnail_title">Event2</span>
         </div>
         <section class="oe_snippet_body mb32 mt16">        
 
@@ -145,6 +179,7 @@
 </div>
 
 <!--Timeline-->
+<!--
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_image_text.png"/>
@@ -185,6 +220,7 @@
             </div>
         </section>
     </div>
+-->
                
                 <!--Embedded posts-->
  
@@ -574,6 +610,121 @@
 		</div><!--/.col-->	
 	</div><!--/.row-->
     </div>
+</section>
+</div>
+
+<!--event-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
+            <span class="oe_snippet_thumbnail_title">NAME</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+
+    <div class="container">
+		<div class="row">
+			<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+				<ul class="event-list">
+					<li>
+						<time datetime="2014-07-20">
+							<span class="day">4</span>
+							<span class="month">Jul</span>
+							<span class="year">2014</span>
+							<span class="time">ALL DAY</span>
+						</time>
+						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
+						<div class="info">
+							<h2 class="title">Independence Day</h2>
+							<p class="desc">United States Holiday</p>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-20 0000">
+							<span class="day">8</span>
+							<span class="month">Jul</span>
+							<span class="year">2014</span>
+							<span class="time">12:00 AM</span>
+						</time>
+						<div class="info">
+							<h2 class="title">One Piece Unlimited World Red</h2>
+							<p class="desc">PS Vita</p>
+							<ul>
+								<li style="width:50%;"><a href="#website"><span class="fa fa-globe"></span> Website</a></li>
+								<li style="width:50%;"><span class="fa fa-money"></span> $39.99</li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-20 2000">
+							<span class="day">20</span>
+							<span class="month">Jan</span>
+							<span class="year">2014</span>
+							<span class="time">8:00 PM</span>
+						</time>
+						<img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+						<div class="info">
+							<h2 class="title">Mouse0270's 24th Birthday!</h2>
+							<p class="desc">Bar Hopping in Erie, Pa.</p>
+							<ul>
+								<li style="width:33%;">1 <span class="glyphicon glyphicon-ok"></span></li>
+								<li style="width:34%;">3 <span class="fa fa-question"></span></li>
+								<li style="width:33%;">103 <span class="fa fa-envelope"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<li>
+						<time datetime="2014-07-31 1600">
+							<span class="day">31</span>
+							<span class="month">Jan</span>
+							<span class="year">2014</span>
+							<span class="time">4:00 PM</span>
+						</time>
+						<img alt="Disney Junior Live On Tour!" src="http://www.thechaifetzarena.com/images/main/DL13_PiratePrincess_thumb.jpg" />
+						<div class="info">
+							<h2 class="title">Disney Junior Live On Tour!</h2>
+							<p class="desc"> Pirate and Princess Adventure</p>
+							<ul>
+								<li style="width:33%;">$49.99 <span class="fa fa-male"></span></li>
+								<li style="width:34%;">$29.99 <span class="fa fa-child"></span></li>
+							</ul>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
 </section>
 </div>
 
