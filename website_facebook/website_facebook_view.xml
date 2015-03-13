@@ -125,39 +125,126 @@
                             <div class="oe_row"> 
                                 <!--Info Page-->
                                 <lable><strong>About </strong><t><strong t-esc="res_company.name"></strong></t></lable><hr/><br/><br/>
-                                    <group >
-                                        <div class="pull-left col-xs-6 col-lg-4">
-                                            <h9><strong>Page Info</strong></h9>
-                                        </div>
-                                    </group>
-                                    
-                                    <!--Info Boxes-->   
-                                    <group>
-                                        <div class="pull-right col-xs-12 col-sm-6 col-lg-8">
-                                            <label><strong>PAGE INFO</strong></label><hr/>
-                                            <h10><span class="tab">Company Tag Line </span></h10>
-                                            <t t-esc="res_company.rml_header1"/><hr/>
-                                            <!--Company Address-->
-                                            <h10>Address</h10>
-                                            <t t-esc="res_company.street"/><br/><t t-esc="res_company.city"/>
-                                            <t t-esc="res_company.zip"/><br/>
-                                            <t t-esc="res_company.country_id.name"/><hr/>
-                                            <!--Company Website-->
-                                            <h10>Website</h10>
-                                            <span class="oe_form_field oe_form_field_url">
-                                                <a class="oe_form_uri" target="_blank" t-att-href="res_company.website">
-                                                <t t-esc="res_company.website"/></a></span><hr/>
-                                            <!--Company Phone-->
-                                            <h10>Phone</h10>
-                                            <t t-esc="res_company.phone"/><hr/>
-                                            <!--Company Fax-->
-                                            <h10>Fax</h10>
-                                            <t t-esc="res_company.fax" /><hr/>
-                                            <!--Company Email-->
-                                            <h10>Email</h10>
-                                             <t t-esc="res_company.email"/>
-                                        </div>
-                                    </group>
+                                <group >
+                                    <div class="pull-left col-xs-6 col-lg-4">
+                                        <h9><strong>Page Info</strong></h9>
+                                    </div>
+                                </group>
+                                
+                                <!--Info Boxes-->   
+                                <group>
+                                    <div class="pull-right col-xs-12 col-sm-6 col-lg-8">
+                                        <label><strong>PAGE INFO</strong></label><hr/>
+                                        <t t-if="res_company.rml_header1">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Company Tag Line</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.rml_header1"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        <!--Company Address-->
+                                        <t t-if="res_company.street">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Address</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.street"/><br/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                        <!--Address 2-->
+                                        <t t-if="res_company.street2">
+                                            <div class="row">
+                                                <div class="col-md-4"/>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.street2"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                        <!--City, State, Zip, Country-->
+                                        <t t-if="res_company.country_id.name or 
+                                                res_company.city or res_company.state_id.name or res_company.zip">
+                                            <div class="row">
+                                                <div class="col-md-4"/>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.city"/>
+                                                    <t t-esc="res_company.state_id.name"/>
+                                                    <t t-esc="res_company.zip"/><br/>
+                                                    <t t-esc="res_company.country_id.name"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        <!--Company Website-->
+                                        <t t-if="res_company.website">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Website</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <span class="oe_form_field oe_form_field_url">
+                                                        <a class="oe_form_uri" target="_blank" t-att-href="res_company.website">
+                                                        <t t-esc="res_company.website"/></a></span>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        <!--Company Phone-->
+                                        <t t-if="res_company.phone">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Phone</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.phone"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        <!--Company Fax-->
+                                        <t t-if="res_company.fax">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Fax</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.fax" />
+                                                </div>
+                                            </div>
+                                        </t>
+                                        <!--Company Email-->
+                                        <t t-if="res_company.email">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Email</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.email"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                                        
+                                        <!--Bank Account-->
+                                        <t t-if="res_company.bank_ids and res_company.bank_ids[0].acc_number or res_company.bank_ids[0].bank_name or 
+                                        res_company.bank_ids[0].partner_id.name">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Account</strong></h10><br/>
+                                                    <t t-esc="res_company.bank_ids[0].acc_number"/>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <h10><strong>Bank</strong></h10><br/>
+                                                    <t t-esc="res_company.bank_ids[0].bank_name"/>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <h10><strong>Owner</strong></h10><br/>
+                                                    <t t-esc="res_company.bank_ids[0].partner_id.name"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </group>
                             </div>
                         </section>
                     </div>            
