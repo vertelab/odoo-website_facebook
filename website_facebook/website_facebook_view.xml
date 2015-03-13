@@ -3,112 +3,180 @@
     <data>
         <!--Layout Template-->
         <template id="website_facebook.layout" inherit_id="website.layout" name="Facebook Layout">
-            <xpath expr="//header" position="inside">
+            <xpath expr="//main/t" position="before">
                 <div id="fb_header"></div>
             </xpath>
+            <xpath expr="//head" position="inside">
+                <div id="fb_head"></div>
+            </xpath>
+
 <!--
             <xpath expr="//div[@class='navbar navbar-default navbar-static-top']" position="replace">
             </xpath>
 -->
         </template>
         
-        
         <template id="website_facebook.fb_page"  name="Facebook Page">
             <t t-call="website.layout">
-                <div id="wrap" class="oe_structure oe_empty"/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3 col-md-6 col-lg-4">
+                            <div id="wrap" class="oe_structure oe_empty"/>
+                        </div>
+                        <div class="col-sm-9 col-md-6 col-lg-8">
+                            <div id="wrap" class="oe_structure oe_empty"/>
+                        </div>
+                    </div>
+                </div>
             </t>
         </template>
         
         <!--Facebook Header Template Connected To Facebook Layout-->
-        <template id="website_facebook.facebook_header" inherit_id="website_facebook.layout" customize_show="True" name="Facebook Header">
+        <template id="website_facebook.facebook_header" inherit_id="website_facebook.layout" customize_show="True" active="False" name="Facebook Header">
+            <xpath expr="//div[@id='fb_head']" position="after">
+                <style>
+                    body
+                        {
+                            font-family: 'Open Sans', sans-serif;
+                        }
+
+                        .fb-profile img.fb-image-lg{
+                            z-index: 0;
+                            width: 100%;  
+                            margin-bottom: 10px;
+                        }
+
+                        .fb-image-profile
+                        {
+                            margin: -90px 10px 0px 50px;
+                            z-index: 9;
+                            width: 20%; 
+                        }
+
+                        @media (max-width:768px)
+                        {  
+                            fb-profile-text>h1{
+                            font-weight: 700;
+                            font-size:16px;
+                        }
+
+                        .fb-image-profile
+                        {
+                            margin: -45px 10px 0px 25px;
+                            z-index: 9;
+                            width: 20%; 
+                        }
+                        }
+                            
+                            
+                            
+                    .label,.glyphicon { margin-right:5px; }
+                </style>
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+                
+            </xpath>
+            
             <xpath expr="//div[@id='fb_header']" position="replace">
-                <html>
-                    <head>
-                        <style>
-                            body
-                                {
-                                    font-family: 'Open Sans', sans-serif;
-                                }
-
-                                .fb-profile img.fb-image-lg{
-                                    z-index: 0;
-                                    width: 100%;  
-                                    margin-bottom: 10px;
-                                }
-
-                                .fb-image-profile
-                                {
-                                    margin: -90px 10px 0px 50px;
-                                    z-index: 9;
-                                    width: 20%; 
-                                }
-
-                                @media (max-width:768px)
-                                {  
-                                    fb-profile-text>h1{
-                                    font-weight: 700;
-                                    font-size:16px;
-                                }
-
-                                .fb-image-profile
-                                {
-                                    margin: -45px 10px 0px 25px;
-                                    z-index: 9;
-                                    width: 20%; 
-                                }
-                                }
-                                    
-                                    
-                                    
-                            .label,.glyphicon { margin-right:5px; }
-                                    
-                        </style>
-                    </head>
-                    <body>
-                        <!--Facebook Header, Profile Picture, Menu Bar -->
-                        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-                            <div class="container">
-                                <div class="fb-profile">
-                                    <img align="left" class="fb-image-lg" src="/website_facebook/static/cover.jpg" alt="Profile image example"/>
-                                    <img align="left" class="fb-image-profile thumbnail" src="/website_facebook/static/profile.jpg" alt="Profile image example"/>
-                                    <div class="fb-profile-text">
-                                        <h1>Vertel AB</h1>
-                                        <p>Working With Odoo.</p>
-                                    </div>
-                                    <div class="container">
-                                        <nav class="navbar" role="navigation">
-                                            <div class="navbar-header">
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                                    <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
-                                                            class="icon-bar"></span><span class="icon-bar"></span>
-                                                </button>
-                                            </div>
-                                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                                <ul class="nav navbar-nav" id="fb_menu">
-                                                    <li><a href="/fb"><span class="fa fa-home fa-fw"></span>Home</a></li>
-                                                    <li><a href="#"><span class="fa fa-calendar fa-fw"></span>Calendar</a></li>
-                                                    <li><a href="#"><span class="fa fa-cogs fa-fw"></span>Service</a></li>
+                <!--Facebook Header, Profile Picture, Menu Bar -->
+                <div class="container">
+                    <div class="fb-profile">
+                        <img align="left" class="fb-image-lg" src="/website_facebook/static/cover.jpg" alt="Profile image example"/>
+                        <img align="left" class="fb-image-profile thumbnail" src="/website_facebook/static/profile.jpg" alt="Profile image example"/>
+                        <div class="fb-profile-text">
+                            <h1>Vertel AB</h1>
+                            <p>Working With Odoo.</p>
+                        </div>
+                    
+                        <div class="container">
+                            <nav class="navbar" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                                class="icon-bar"></span><span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav" id="fb_menu">
+                                        <li><a href="/fb"><span class="fa fa-home fa-fw"></span>Home</a></li>
+                                        <li><a href="#"><span class="fa fa-calendar fa-fw"></span>Calendar</a></li>
+                                        <li><a href="#"><span class="fa fa-cogs fa-fw"></span>Service</a></li>
 <!--
-                                                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="#">Photos</a></li>
-                                                            <li><a href="#">Videos</a></li>
-                                                        </ul>
-                                                    </li>
+                                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Photos</a></li>
+                                                <li><a href="#">Videos</a></li>
+                                            </ul>
+                                        </li>
 -->
-                                                </ul>
-                                            </div>
-                                        </nav>
-                                    </div> <!--container-->
-                                </div> <!--fb-profile-->
-                            </div> <!-- /container -->  
-                    </body>
-                </html>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div> <!--container-->
+                    </div><!--fb-profile-->
+                </div> <!-- /container -->  
             </xpath>
         </template>
         
         <template id="website_facebook.about" name="Facebook About">
+            <head>
+                <style>
+                    lable {
+                        color: #10B5F7;
+                        }
+                    
+                    h10 {
+                        color: #696565;
+                        text-align: left;
+                    }
+
+                </style>
+            </head>
             <t t-call="website.layout">
+          
+                <!--Info Page -->
+                <section class="mb32 mt16">
+                    <div class="container">
+                        <section class="oe_container oe_light">
+                            <div class="oe_row"> 
+                                <!--Info Page-->
+                                <lable><strong>About </strong><t><strong t-esc="res_company.name"></strong></t></lable><hr/><br/><br/>
+                                    <group >
+                                        <div class="pull-left col-xs-6 col-lg-4">
+                                            <h9><strong>Page Info</strong></h9>
+                                        </div>
+                                    </group>
+                                    
+                                    <!--Info Boxes-->   
+                                    <group>
+                                        <div class="pull-right col-xs-12 col-sm-6 col-lg-8">
+                                            <label><strong>PAGE INFO</strong></label><hr/>
+                                            <h10><span class="tab">Company Tag Line </span></h10>
+                                            <t t-esc="res_company.rml_header1"/><hr/>
+                                            <!--Company Address-->
+                                            <h10>Address</h10>
+                                            <t t-esc="res_company.street"/><br/><t t-esc="res_company.city"/>
+                                            <t t-esc="res_company.zip"/><br/>
+                                            <t t-esc="res_company.country_id.name"/><hr/>
+                                            <!--Company Website-->
+                                            <h10>Website</h10>
+                                            <span class="oe_form_field oe_form_field_url">
+                                                <a class="oe_form_uri" target="_blank" t-att-href="res_company.website">
+                                                <t t-esc="res_company.website"/></a></span><hr/>
+                                            <!--Company Phone-->
+                                            <h10>Phone</h10>
+                                            <t t-esc="res_company.phone"/><hr/>
+                                            <!--Company Fax-->
+                                            <h10>Fax</h10>
+                                            <t t-esc="res_company.fax" /><hr/>
+                                            <!--Company Email-->
+                                            <h10>Email</h10>
+                                             <t t-esc="res_company.email"/>
+                                        </div>
+                                    </group>
+                            </div>
+                        </section>
+                    </div>            
+                </section>
                 <div id="wrap" class="oe_structure oe_empty"/>
             </t>
         </template>
@@ -117,6 +185,7 @@
             <xpath expr="//ul[@id='fb_menu']/li[a/span[@class='fa fa-home fa-fw']]" position="after">
                 <li><a href="/fb/about"><span class="fa fa-pencil fa-fw"></span>About</a></li>
             </xpath>
+            
         </template>
     </data>
 </openerp>

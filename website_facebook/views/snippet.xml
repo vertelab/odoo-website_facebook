@@ -4,7 +4,9 @@
     <template id="website_facebook.css" inherit_id="website.theme" customize_show="True" name="Snippet CSS"> 
     <xpath expr="//link[@href='/website/static/src/css/website.css']" position="after">
         <link rel="stylesheet" href="/website_facebook/static/src/css/snippets.css" t-ignore="true"/>
+<!--
         <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>
+-->
         <link rel="stylesheet" href="/website_facebook/static/src/css/social_share.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/event.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css" t-ignore="true"/>
