@@ -28,23 +28,38 @@ import openerp.tools
 import werkzeug
 import facebook
 
+class res_company(models.Model):
+    _inherit = "res.company"
+    
+    company_desc=fields.Text(string = 'Company Description', required=False)
+
 class website_facebook(http.Controller):      
     @http.route(['/fb'], type='http', auth="public", website=True)
-    def facebook_header(self, user=False, **post):
+    def facebook_header(self, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
            
         ctx = {
-            'user' : user,
+
+            
             }
         return request.render('website_facebook.fb_page', ctx)   
         
     @http.route(['/fb/about','/<model("res.company"):company>/'], type='http', auth="public", website=True)
-    def facebook_about(self, user=False, company=False,  **post):
+    def facebook_about(self, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-           
+        
+        account=False
+        if company:
+            for record in company.bank_ids:
+                if record.footer==True:
+                    account=record.acc_number
+                    break
+                
+        
         ctx = {
-            'user' : user,
             'company' : company,
+            'account' : account,
+            'res_users' : request.registry.get('res.users').browse(cr,uid,uid),
             }
         return request.render('website_facebook.about', ctx)  
     
