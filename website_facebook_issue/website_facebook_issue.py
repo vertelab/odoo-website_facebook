@@ -29,7 +29,13 @@ import openerp.tools
 import werkzeug
 import facebook
 
-class website_facebook(http.Controller):      
+class facebook_issue(model.Model):
+    _name = 'facebook.issue',
+    _description = 'Facebook Issue',
+    _inherit = ['project.issue']
+
+
+class website_facebook_issue(http.Controller):      
     @http.route(['/fb'], type='http', auth="public", website=True)
     def facebook_header(self, user=False, **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
@@ -39,12 +45,11 @@ class website_facebook(http.Controller):
             }
         return request.render('website_facebook.fb_page', ctx)   
         
-    @http.route(['/fb/about','/<model("res.company"):company>/'], type='http', auth="public", website=True)
-    def facebook_about(self, user=False, company=False,  **post):
+    @http.route(['/fb/issue'], type='http', auth="public", website=True)
+    def facebook_issue(self, user=False, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
            
         ctx = {
             'user' : user,
-            'company' : company,
             }
-        return request.render('website_facebook.about', ctx)  
+        return request.render('website_facebook.issue', ctx)  

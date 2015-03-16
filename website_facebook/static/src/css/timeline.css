@@ -16,7 +16,7 @@
 .timeline > li {
   margin-bottom: 0px;
   position: relative;
-  width: 50%;
+  width: 48%;
   float: left;
   clear: left;
 }
@@ -60,6 +60,7 @@
 .timeline > li.timeline-inverted{
   float: left; 
   clear: left;
+  width: 48%;
   margin-top: 0px;
   margin-bottom: 0px;
 }

@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/timeline_menu.css" t-ignore="true"/>                 
         <link rel="stylesheet" href="/website_facebook/static/src/css/news.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/issues.css" t-ignore="true"/>
 <!--
         <link rel="stylesheet" href="/website_facebook/static/src/css/about.css" t-ignore="true"/>
 -->
@@ -816,11 +817,15 @@
             <span class="oe_snippet_thumbnail_title">About</span>
         </div>
         <section class="oe_snippet_body mb32 mt16">        
-<div class="container">
-    <div class="row">
-		<div class="col-sm-offset-4 col-sm-4">
-			<ul class="list-group">
-				<li class="list-group-item">	
+    <div class="container">
+		<div class="row">
+			<div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
+				<div class="[ info-card ]">
+					<div class="[ info-card-details ] animate">
+						<div class="[ info-card-header ]">
+						</div>
+						<div class="[ info-card-detail ]">	
+                <li class="list-group-item">            
 					<ul class="list-group-submenu">
                                         <t t-if="res_company.rml_header1">
                                             <div class="row">
@@ -906,7 +911,9 @@
                                         </t>
                     </ul>
 				</li>
-			</ul>
+            </div>
+            </div>
+            </div>
 		</div>
 	</div>
 </div>
@@ -955,6 +962,79 @@
 </div>
 -->
 
+<!--Issues-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
+            <span class="oe_snippet_thumbnail_title">Issues</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+            
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Issues <small></small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Issue Number</label>
+                            <input type="text" class="form-control" id="name" placeholder="Issue number" required="required" />                       
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Status</label>
+                            <div class="input-group">
+<!--
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+-->
+                                <input type="email" class="form-control" id="email" placeholder="Status" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+<!--
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+-->
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>
 
 <!-- dont do changes efter this -->            
        

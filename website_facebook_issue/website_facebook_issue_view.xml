@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="website_facebook_ssue.issue" name="Facebook Issue">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty"/>
+            </t>
+        </template>
+        
+        <template id="website_facebook_issue.issue_menu" inherit_id="website_facebook.facebook_header" priority="5" customize_show="True" active="False" name="Facebook Issue Menu">
+            <xpath expr="//ul[@id='fb_menu']/li[a/span[@class='fa fa-home fa-fw']]" position="after">
+                <li><a href="/fb/issue"><span class="fa fa-book fa-fw"></span>Issue</a></li>
+            </xpath>
+        </template>
+    </data>
+</openerp>

@@ -10,13 +10,13 @@
   content: " ";
   width: 3px;
   background-color: #eeeeee;
-  left: 25%;
+  left: 24%;
   margin-left: -1.5px;
 }
 .timeline_menu > li {
   margin-bottom: 0px;
   position: relative;
-  width: 25%;
+  width: 22%;
   float: left;
   clear: left;
 }
@@ -43,7 +43,7 @@
 .timeline_menu > li.timeline-inverted{
   float: right; 
   clear: right;
-  width: 75%;
+  width: 72%;
   position: center;
   margin-top: 0px;
   margin-bottom: 0px;
