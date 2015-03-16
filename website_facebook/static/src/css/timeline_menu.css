@@ -1,66 +1,67 @@
-.timeline {
+.timeline_menu {
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
 }
-.timeline:before {
+.timeline_menu:before {
   top: 0;
   bottom: 0;
   position: absolute;
   content: " ";
   width: 3px;
   background-color: #eeeeee;
-  left: 50%;
+  left: 24%;
   margin-left: -1.5px;
 }
-.timeline > li {
+.timeline_menu > li {
   margin-bottom: 0px;
   position: relative;
-  width: 48%;
+  width: 22%;
   float: left;
   clear: left;
 }
-.timeline > li:before,
-.timeline > li:after {
+.timeline_menu > li:before,
+.timeline_menu > li:after {
   content: " ";
   display: table;
 }
-.timeline > li:after {
+.timeline_menu > li:after {
   clear: both;
 }
-.timeline > li:before,
-.timeline > li:after {
+.timeline_menu > li:before,
+.timeline_menu > li:after {
   content: " ";
   display: table;
 }
-.timeline > li:after {
+.timeline_menu > li:after {
   clear: both;
 }
 .timeline-body > ul {
     padding:20px;
     margin-bottom: 0;
 }
-.timeline > li.timeline-inverted{
+.timeline_menu > li.timeline-inverted{
   float: right; 
   clear: right;
+  width: 72%;
+  position: center;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 @media (max-width: 767px) {
-    ul.timeline:before {
+    ul.timeline_menu:before {
         left: 40px;
     }
-    ul.timeline > li {
+    ul.timeline_menu > li {
       margin-bottom: 0px;
       position: relative;
       width:100%;
       float: left;
       clear: left;
     }
-.timeline > li.timeline-inverted{
+.timeline_menu > li.timeline-inverted{
   float: left; 
   clear: left;
-  width: 48%;
   margin-top: 0px;
   margin-bottom: 0px;
 }

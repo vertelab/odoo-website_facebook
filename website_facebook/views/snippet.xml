@@ -10,14 +10,23 @@
 <!--
         <link rel="stylesheet" href="/website_facebook/static/src/css/event.css" t-ignore="true"/>
 -->
+<!--
         <link rel="stylesheet" href="/website_facebook/static/src/css/event2.css" t-ignore="true"/>
+-->
         <link rel="stylesheet" href="/website_facebook/static/src/css/contact.css" t-ignore="true"/>
         <link rel="stylesheet" href="/website_facebook/static/src/css/review.css" t-ignore="true"/>
-        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>        
-
+        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/timeline_menu.css" t-ignore="true"/>                 
+        <link rel="stylesheet" href="/website_facebook/static/src/css/news.css" t-ignore="true"/>
+        <link rel="stylesheet" href="/website_facebook/static/src/css/issues.css" t-ignore="true"/>
+<!--
+        <link rel="stylesheet" href="/website_facebook/static/src/css/about.css" t-ignore="true"/>
+-->
+    
         <script type="text/javascript" src="website_facebook/static/src/js/facebook.js"></script>
 <!--
         <script type="text/javascript" src="website_facebook/static/src/js/timeline.js"></script>
+        <script type="text/javascript" src="website_facebook/static/src/js/news.js"></script>        
 -->
         </xpath>
     </xpath>  
@@ -43,6 +52,31 @@
 <div class="container">
     <div class="row">
     <ul class="timeline">
+        <li>
+            <div class="timeline-heading">            
+                <div id="wrap" class="oe_structure oe_empty"/>             
+            </div>
+        </li>
+        
+        <li  class="timeline-inverted">
+                <div id="wrap" class="oe_structure oe_empty"/>             
+        </li>        
+    </ul>
+    </div>
+</div>
+</section>
+</div>
+
+<!--two row menu layout-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_title.png"/>
+            <span class="oe_snippet_thumbnail_title">Two Rows menu</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    <div class="row">
+    <ul class="timeline_menu">
         <li>
             <div class="timeline-heading">            
                 <div id="wrap" class="oe_structure oe_empty"/>             
@@ -120,6 +154,7 @@
 </div>
 
 <!--event snippet-->
+<!--
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_banner.png"/>
@@ -128,7 +163,7 @@
         <section class="oe_snippet_body mb32 mt16">        
 
     <div class="container">
-<!-- Start your code here -->
+    
 <div class="panel panel-default event">
   <div class="panel-body">
     <div class="rsvp col-xs-2 col-sm-2">
@@ -147,7 +182,7 @@
             <li role="presentation" class="active"><a href="#location" aria-controls="location" role="tab" data-toggle="tab">Location</a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
           </ul>
-          <!-- Tab panes -->
+
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="location">Location</div>
             <div role="tabpanel" class="tab-pane" id="profile">
@@ -177,6 +212,7 @@
 </div>
 </section>
 </div>
+-->
 
 <!--Timeline-->
 <!--
@@ -614,6 +650,7 @@
 </div>
 
 <!--event-->
+<!--
     <div>
         <div class="oe_snippet_thumbnail">
             <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
@@ -725,6 +762,277 @@
 		</div>
 	</div>
 
+</section>
+</div>
+-->
+
+<!--news-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_panel.png"/>
+            <span class="oe_snippet_thumbnail_title">News</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    <ul class="news">
+<li  class="news-inverted">
+          <div class="news-panel">
+            <div class="news-body">
+              <p></p>
+            </div>
+            
+            <div class="news-footer">
+                <a><i class="glyphicon glyphicon-thumbs-up"></i></a>
+                <a><i class="glyphicon glyphicon-share"></i></a>
+                <a class="pull-right">Continue reading</a>
+            </div>
+          </div>
+        </li>
+        </ul>
+        </div>
+</section>
+</div>       
+
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_panel.png"/>
+            <span class="oe_snippet_thumbnail_title">Box</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+    <div class="foo col-md-4">
+      <div class="panel panel-default">
+       <div class="panel-heading">Title</div>
+       <div class="panel-body">Content here..</div>
+      </div>
+    </div>
+</div>
+</section>
+</div>
+
+<!--About-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_well.png"/>
+            <span class="oe_snippet_thumbnail_title">About</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+    <div class="container">
+		<div class="row">
+			<div class="[ col-sm-6 col-md-offset-2 col-md-4 ]">
+				<div class="[ info-card ]">
+					<div class="[ info-card-details ] animate">
+						<div class="[ info-card-header ]">
+						</div>
+						<div class="[ info-card-detail ]">	
+                <li class="list-group-item">            
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.rml_header1">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Company Tag Line</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.rml_header1"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+					</ul>
+				</li>
+				<li class="list-group-item">			
+					<ul class="list-group-submenu">
+                                       <t t-if="res_company.partner_id.contact_address">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Address</strong></h10>
+                                                </div>
+                                                <div class="col-md-8 ">
+                                                    <t t-esc="res_company.partner_id.contact_address"/><br/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                    </ul>
+				</li>
+				<li class="list-group-item">
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.website">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Website</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <span class="oe_form_field oe_form_field_url">
+                                                        <a class="oe_form_uri" target="_blank" t-att-href="res_company.website">
+                                                        <t t-esc="res_company.website"/></a></span>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+					</ul>
+				</li>
+                				<li class="list-group-item">			
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.phone">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Phone</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.phone"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                    </ul>
+				</li>
+				<li class="list-group-item">			
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.fax">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Fax</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.fax" />
+                                                </div>
+                                            </div>
+                                        </t>
+                    </ul>
+				</li>
+				<li class="list-group-item">			
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.email">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Email</strong></h10>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <t t-esc="res_company.email"/>
+                                                </div>
+                                            </div><hr/>
+                                        </t>
+                    </ul>
+				</li>
+            </div>
+            </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+</section>
+</div>
+
+<!--about bank info-->
+<!--
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
+            <span class="oe_snippet_thumbnail_title">NAME</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+<div class="container">
+				<li class="list-group-item">			
+					<ul class="list-group-submenu">
+                                        <t t-if="res_company.bank_ids and res_company.bank_ids[0].acc_number or res_company.bank_ids[0].bank_name or 
+                                        res_company.bank_ids[0].partner_id.name">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h10><strong>Account</strong></h10><br/>
+                                                    <div class="col-md-8">
+                                                    <t t-esc="res_company.bank_ids[0].acc_number"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <h10><strong>Bank</strong></h10><br/>
+                                                    <div class="col-md-8">                                                    
+                                                    <t t-esc="res_company.bank_ids[0].bank_name"/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <h10><strong>Owner</strong></h10><br/>
+                                                    <div class="col-md-8">                                                    
+                                                    <t t-esc="res_company.bank_ids[0].partner_id.name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                    </ul>
+				</li>
+</div>
+</section>
+</div>
+-->
+
+<!--Issues-->
+    <div>
+        <div class="oe_snippet_thumbnail">
+            <img class="oe_snippet_thumbnail_img" src="add_your_dir_with.png"/>
+            <span class="oe_snippet_thumbnail_title">Issues</span>
+        </div>
+        <section class="oe_snippet_body mb32 mt16">        
+            
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Issues <small></small></h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Issue Number</label>
+                            <input type="text" class="form-control" id="name" placeholder="Issue number" required="required" />                       
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Status</label>
+                            <div class="input-group">
+<!--
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+-->
+                                <input type="email" class="form-control" id="email" placeholder="Status" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+<!--
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+-->
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </section>
 </div>
 
