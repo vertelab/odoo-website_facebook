@@ -40,8 +40,6 @@ class website_facebook(http.Controller):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
            
         ctx = {
-
-            
             }
         return request.render('website_facebook.fb_page', ctx)   
         
