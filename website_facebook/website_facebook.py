@@ -47,17 +47,13 @@ class website_facebook(http.Controller):
     def facebook_about(self, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         
-        account=False
-        if company:
-            for record in company.bank_ids:
-                if record.footer==True:
-                    account=record.acc_number
-                    break
+        
+        
                 
         
         ctx = {
             'company' : company,
-            'account' : account,
+          
             'res_users' : request.registry.get('res.users').browse(cr,uid,uid),
             }
         return request.render('website_facebook.about', ctx)  

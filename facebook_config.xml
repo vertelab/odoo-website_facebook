@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_facebook_config_settings" model="ir.ui.view">
+            <field name="name">Facebook settings</field>
+            <field name="model">facebook.config.settings</field>
+            <field name="arch" type="xml">
+                <form string="Configure Website" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                    <div>
+                        <field name="app_id" invisible="True" on_change="on_change_website_id(app_id)"/>
+                        <group string="Domain">
+                            <field name="name" />
+                            <div>
+                                <div name="google_analytics_key" class="oe_inline">
+                                    <field name="google_analytics_key" placeholder="UA-XXXXXXXX-Y"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group string="Social Media">
+                            <label for="fb_website"/>
+                            <div name="fb_website">
+                                <div class="oe_inline">
+                                    <field name="fb_website" placeholder="https://facebook.com/pagename"/>
+                                </div>
+                            </div>
+                        </group>
+                    </form>
+                </field>
+            </record>

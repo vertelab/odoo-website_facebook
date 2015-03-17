@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_facebook_config_settings" model="ir.ui.view">
+            <field name="name">Facebook settings</field>
+            <field name="model">facebook.config.settings</field>
+            <field name="arch" type="xml">
+<!--
+                <form string="Configure Website" class="oe_form_configuration">
+                    <header>
+                        <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                    </header>
+                </form> 
+-->
+                <form string="Facebook Settings">
+                    <group>
+                        <field name="name" placeholder="Enter you app name here ..."/>
+                        <field name="app_id" placeholder="Enter you app ID here ..."/>
+                        <field name="app_pwd" placeholder="Enter you app password here ..."/>
+                        <field name="fb_website" placeholder="https://www.facebook.com/abcd"/>
+                    </group>
+                </form>    
+            </field>
+        </record>    
+        
+        <record id="action_view_facebook_config_settings" model="ir.actions.act_window">
+            <field name="name">Facebook Settings</field>
+            <field name="res_model">facebook.config.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_facebook_config_settings"/>
+        </record> 
+        <menuitem
+            sequence="95"
+            action="action_view_facebook_config_settings" id="menu_view_facebook_config_settings" parent="base.menu_config"/>
+    </data>
+</openerp>
