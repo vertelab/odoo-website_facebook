@@ -30,11 +30,16 @@ import werkzeug
 import facebook
 
 class website_facebook_issue(http.Controller):        
-    @http.route(['/fb/issue'], type='http', auth="public", website=True)
-    def facebook_issue(self, user=False, company=False,  **post):
+    @http.route(['/fb/issue', '/fb/issue/<model("project.issue"):project_issue>'], type='http', auth="public", website=True)
+    def facebook_issue(self, project_issue=False, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-           
+        
+        user = request.registry.get('res.users').browse(cr,uid,uid)
         ctx = {
-            'user' : user,
-            }
+            'user' : request.registry.get('res.users').browse(cr,uid,uid),
+            'project_issue' : project_issue,
+            'project_issues' : request.registry.get('project.issue').browse(cr,uid,request.registry.get('project.issue').search(cr,uid,[('partner_id','=',user.partner_id.id)]),),
+             }
+            
+            
         return request.render('website_facebook.issue', ctx)  
