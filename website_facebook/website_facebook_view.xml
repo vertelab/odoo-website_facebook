@@ -91,7 +91,7 @@
                 <!--Facebook Header, Profile Picture, Menu Bar -->
                 <div class="container">
                     <div class="col-md-12 " style="margin: 0px 0px 0px 55px; position:relative;">
-                        <img id="fb-logo" src="/website/image/ir.attachment/46_ea772b7/datas" style="width: 100%; max-width:851px"/>
+                        <img id="fb-logo" src="/website_facebook/static/src/img/header.jpg" style="width: 100%; max-width:851px"/>
                         <div class="col-md-4 col-xs-12" style="bottom: 20px; left: 20px; position:absolute; ">
                             <div class="col-md-4 col-xs-12">
                                 <img class="img-responsive" id="fb-profil" src="https://www.celebsgonegood.com/images/thumb-lilly-singh.jpg" style="border:5px #fff solid; max-width:100px; height:100px;"/>
