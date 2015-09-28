@@ -47,13 +47,8 @@ class website_facebook(http.Controller):
     def facebook_about(self, company=False,  **post):
         cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
         
-        
-        
-                
-        
         ctx = {
             'company' : company,
-          
-            'res_users' : request.registry.get('res.users').browse(cr,uid,uid),
+            'res_users' : request.env['res.users'].browse(uid),
             }
         return request.render('website_facebook.about', ctx)  

@@ -29,16 +29,60 @@ import openerp.tools
 import werkzeug
 import facebook
 
+import logging
+_logger = logging.getLogger(__name__)
 
-
-class website_facebook_issue(http.Controller):        
-    @http.route(['/fb/issue', '/<model("project.issue"):project>/'], type='http', auth="public", website=True)
-    def facebook_header(self, user=False, project=False, **post):
-        cr, uid, context, pool = request.cr, request.uid, request.context, request.registry
-           
+class website_facebook_issue(http.Controller):
+    @http.route(['/fb/issue', '/fb/issue/<model("project.issue"):project_issue>'], type='http', auth="public", website=True)
+    def facebook_issue(self, project_issue=False, **post):
+       
+        _logger.info(request.httprequest.cookies)
+        
+        user = request.env['res.users'].browse(request.uid)
+        facebook_app_id = request.env['ir.config_parameter'].search([("key","=","website_facebook.app_id")])
+        facebook_app_secret = request.env['ir.config_parameter'].search([("key","=","website_facebook.app_secret")])
+        _logger.info(facebook_app_id.value)
+        _logger.info(facebook_app_secret.value)
+        cookie = facebook.get_user_from_cookie(
+                request.httprequest.cookies, facebook_app_id.value, facebook_app_secret.value)
+        
+        _logger.info(cookie)
+        
         ctx = {
-                'user' : user,
-                'project' : project,
-            }
-        return request.render('website_facebook.issue', ctx)   
+            'user' : user,
+            'app_id' : facebook_app_id.value,
+            'app_secret' : facebook_app_secret.value,
+            'project_issue' : project_issue,
+            'project_issues' : request.env['project.issue'].search([('partner_id','=',user.partner_id.id)]),
+             }
+            
+        return request.render('website_facebook.issue', ctx)
 
+    #~ def current_user(self):
+        #~ """Returns the active user, or None if the user has not logged in."""   
+        #~ if not hasattr(self, "_current_user"):
+            #~ self._current_user = None
+            #~ cookie = facebook.get_user_from_cookie(
+                #~ request.cookies.get(), FACEBOOK_APP_ID, FACEBOOK_APP_SECRET)
+       #~ 
+            #~ if cookie:
+                #~ # Store a local instance of the user data so we don't need
+                #~ # a round-trip to Facebook on every request
+                #~ user = User.get_by_key_name(cookie["uid"])
+           #~ 
+                #~ if not user:
+                    #~ graph = facebook.GraphAPI(cookie["access_token"])
+                    #~ profile = graph.get_object("me")
+                    #~ user = User(key_name=str(profile["id"]),
+                                #~ id=str(profile["id"]),
+                                #~ name=profile["name"],
+                                #~ profile_url=profile["link"],
+                                #~ access_token=cookie["access_token"])
+                    #~ user.put()
+               #~ 
+                #~ elif user.access_token != cookie["access_token"]:
+                    #~ user.access_token = cookie["access_token"]
+                    #~ user.put()
+                #~ self._current_user = user
+                #~ 
+        #~ return self._current_user

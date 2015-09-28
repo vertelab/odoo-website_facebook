@@ -3,72 +3,105 @@
     <data>
         <template id="website_facebook.issue" name="Facebook Issue">
             <t t-call="website.layout">
-<!--
-                <div id="wrap" class="oe_structure oe_empty"/>
--->
-                            
-<div class="jumbotron jumbotron-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="h1">
-                    Issues <small></small></h1>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm">
-                <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Issue number</label>
-                            <input type="text" class="form-control" id="name" placeholder="Issue number" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">
-                                Status</label>
-                            <div class="input-group">
-<!--
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                </span>
--->
-                                <input type="email" class="form-control" id="Status" placeholder="Status" required="required" /></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject</label>
-                            <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <t t-if = "project_issue.id">
-                                <t t-esc = "project_issue.id"/>
-                                </t>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                            Send Message</button>
-                    </div>
+                <script>
+                  // This is called with the results from from FB.getLoginStatus().
+                  function statusChangeCallback(response) {
+                    console.log('statusChangeCallback');
+                    console.log(response);
+                    // The response object is returned with a status field that lets the
+                    // app know the current login status of the person.
+                    // Full docs on the response object can be found in the documentation
+                    // for FB.getLoginStatus().
+                    if (response.status === 'connected') {
+                      // Logged into your app and Facebook.
+                      testAPI();
+                    } else if (response.status === 'not_authorized') {
+                      // The person is logged into Facebook, but not your app.
+                      document.getElementById('status').innerHTML = 'Please log ' +
+                        'into this app.';
+                    } else {
+                      // The person is not logged into Facebook, so we're not sure if
+                      // they are logged into this app or not.
+                      document.getElementById('status').innerHTML = 'Please log ' +
+                        'into Facebook.';
+                    }
+                  }
+
+                  // This function is called when someone finishes with the Login
+                  // Button.  See the onlogin handler attached to it in the sample
+                  // code below.
+                  function checkLoginState() {
+                    FB.getLoginStatus(function(response) {
+                      statusChangeCallback(response);
+                    });
+                  }
+
+                  window.fbAsyncInit = function() {
+                  FB.init({
+                    appId      : <t t-esc='app_id'/>,
+                    cookie     : true,  // enable cookies to allow the server to access 
+                                        // the session
+                    xfbml      : true,  // parse social plugins on this page
+                    version    : 'v2.2' // use version 2.2
+                  });
+
+                  // Now that we've initialized the JavaScript SDK, we call 
+                  // FB.getLoginStatus().  This function gets the state of the
+                  // person visiting this page and can return one of three states to
+                  // the callback you provide.  They can be:
+                  //
+                  // 1. Logged into your app ('connected')
+                  // 2. Logged into Facebook, but not your app ('not_authorized')
+                  // 3. Not logged into Facebook and can't tell if they are logged into
+                  //    your app or not.
+                  //
+                  // These three cases are handled in the callback function.
+
+                  FB.getLoginStatus(function(response) {
+                    statusChangeCallback(response);
+                  });
+
+                  };
+
+                  // Load the SDK asynchronously
+                  (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+
+                  // Here we run a very simple test of the Graph API after login is
+                  // successful.  See statusChangeCallback() for when this call is made.
+                  function testAPI() {
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', function(response) {
+                      console.log('Successful login for: ' + response.name);
+                      document.getElementById('status').innerHTML =
+                        'Thanks for logging in, ' + response.name + '!';
+                    });
+                  }
+                </script>
+                
+                <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
+
+                <div id="status">
                 </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
+                <div id="wrap" class="oe_structure oe_empty"/>
+                            
+                <!--Call Odoo User-->
+                <t t-if="project_issue.id">
+                    <div class="row">
+                        <h10><strong>Odoo User</strong></h10>
+                        <t t-esc="project_issue.id"/>
+                    </div><hr/>
+                </t>
+            
+            
             </t>
+
         </template>
         
         <template id="website_facebook.issue_menu" inherit_id="website_facebook.facebook_header" priority="0" customize_show="True" active="False" name="Facebook Issue Menu">

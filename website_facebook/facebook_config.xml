@@ -2,23 +2,21 @@
 <openerp>
     <data>
         <record id="view_facebook_config_settings" model="ir.ui.view">
-            <field name="name">Facebook settings</field>
+            <field name="name">Facebook Settings</field>
             <field name="model">facebook.config.settings</field>
             <field name="arch" type="xml">
-<!--
-                <form string="Configure Website" class="oe_form_configuration">
+                <form string="Facebook Settings" class="oe_form_configuration">
                     <header>
                         <button string="Apply" type="object" name="execute" class="oe_highlight"/>
                         or
                         <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                     </header>
-                </form> 
--->
-                <form string="Facebook Settings">
-                    <group>
-                        <field name="name" placeholder="Enter you app name here ..."/>
-                        <field name="app_id" placeholder="Enter you app ID here ..."/>
-                        <field name="app_pwd" placeholder="Enter you app password here ..."/>
+                    
+                    <field name="app_id" invisible="True" on_change="on_change_app_id(app_id)"/>
+                    <group string="Domain">
+                        <field name="name" placeholder="Enter your app name here ..."/>
+                        <field name="fb_id" placeholder="Enter your app ID here ..."/>
+                        <field name="app_pwd" placeholder="Enter your app password here ..."/>
                         <field name="fb_website" placeholder="https://www.facebook.com/abcd"/>
                     </group>
                 </form>    

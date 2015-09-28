@@ -31,7 +31,7 @@ Administrate Your Issues On Facebook With Control.
     'website': 'http://www.vertel.se',
     'depends': ['base','website','project_issue','website_facebook'],
     'data': ['website_facebook_issue_view.xml',
-
+    'views/snippet1.xml'
     ],
 
     'installable': True,

@@ -33,6 +33,8 @@ Share Your Website Posts On Facebook With Control.
     'data': ['website_facebook_view.xml',
     'views/snippet.xml','facebook_config.xml'
     ],
+    
+    
 
     'installable': True,
     
