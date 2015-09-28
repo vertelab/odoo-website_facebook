@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="website_facebook_issue.css" inherit_id="website.theme" customize_show="True" name="Snippet issue CSS"> 
+            <xpath expr="//link[@href='/website/static/src/css/website.css']" position="after">
+                <link rel="stylesheet" href="/website_facebook_issue/static/src/css/snippets.css" t-ignore="true"/>
+                <link rel="stylesheet" href="/website_facebook_issue/static/src/css/issues.css" t-ignore="true"/>
+                <link rel="stylesheet" href="/website_facebook_issue/static/src/css/chat.css" t-ignore="true"/>
+            </xpath>  
+        </template>
+        <template id="facebook_snippet_id" inherit_id="website.snippets" name="Facebook snippet issue">
+            <xpath expr="//ul[@class='nav navbar-nav nav-tabs']" position="inside">
+                 <li class=""><a href="#snippet_facebook_issue" data-toggle="tab">Facebook Issue</a></li>
+            </xpath>
+            <xpath expr="//div[@class='tab-content']">
+                <div id="snippet_facebook_issue" class="tab-pane">
+                    <!-- content goes here -->
+                    <!--Issues-->
+                    <div>
+                        <div class="oe_snippet_thumbnail">
+                            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_panel.png"/>
+                            <span class="oe_snippet_thumbnail_title">Issues</span>
+                        </div>
+                        <section class="oe_snippet_body mb32 mt16">        
+                            <div class="jumbotron jumbotron-sm">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-12">
+                                            <h1 class="h1">
+                                                Issues <small></small>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="well well-sm">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label for="name">
+                                                                Issue number</label>
+                                                            <input type="text" class="form-control" id="name" placeholder="Issue number" required="required" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="email">
+                                                                Status
+                                                            </label>
+                                                            <div class="input-group">
+                                                                <input type="email" class="form-control" id="Status" placeholder="Status" required="required" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="subject">
+                                                                Subject
+                                                            </label>
+                                                            <select id="subject" name="subject" class="form-control" required="required">
+                                                                <option value="na" selected="">Choose One:</option>
+                                                                 </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 ">
+                                                        <div class="form-group">
+                                                            <label for="name">
+                                                                Message
+                                                            </label>
+                                                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                                                placeholder="Message">
+                                                            </textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                                            Send Message
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!--Chat-->
+                    <div>
+                        <div class="oe_snippet_thumbnail">
+                            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_panel.png"/>
+                            <span class="oe_snippet_thumbnail_title">Chat</span>
+                        </div>
+                         <section class="oe_snippet_body mb32 mt16">        
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="panel-heading">
+                                            <span class="glyphicon glyphicon-comment"></span><strong>Chat History</strong> 
+                                        </div>
+                                        <div class="panel-body">
+                                            <ul class="chat">
+                                                <li class="left clearfix"><span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/50/55C1E7/fff&amp;text=U" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                    <div class="chat-body clearfix">
+                                                        <div class="header">
+                                                            <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                                                <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                            dolor, quis ullamcorper ligula sodales.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li class="left clearfix"><span class="chat-img pull-left">
+                                                    <img src="http://placehold.it/50/FA6F57/fff&amp;text=ME" alt="User Avatar" class="img-circle" />
+                                                </span>
+                                                    <div class="chat-body clearfix">
+                                                        <div class="header">
+                                                            <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                                            dolor, quis ullamcorper ligula sodales.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="panel-footer">
+                                                <div class="input-group">
+                                                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-warning btn-sm" id="btn-chat">
+                                                            Send
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <!--Uneven Layout Boxes-->
+                    <div>
+                        <div class="oe_snippet_thumbnail">
+                            <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_title.png"/>
+                            <span class="oe_snippet_thumbnail_title">Uneven Layout</span>
+                        </div>
+                        <section class="oe_snippet_body mb32 mt16">        
+                            <div class="container">
+                                <div class="row">
+                                    <ul class="timeline_heading">
+                                        <li  class="timeline-inverted">
+                                            <div id="wrap" class="oe_structure oe_empty"/>             
+                                        </li> 
+                                        <li>
+                                            <div class="timeline-menu">            
+                                                <div id="wrap" class="oe_structure oe_empty"/>             
+                                            </div>
+                                        </li>     
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+<!-- dont do changes efter this -->            
+                </div>   
+            </xpath>
+        </template>
+    </data>
+</openerp>
