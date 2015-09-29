@@ -90,14 +90,14 @@
             <xpath expr="//body/div[@id='wrapwrap']/header" position="before">
                 <!--Facebook Header, Profile Picture, Menu Bar -->
                 <div class="container">
-                    <div class="col-md-12 " style="margin: 0px 0px 0px 55px; position:relative;">
+                    <div class="col-md-12 " style="margin: 0; position:relative; width:100%;">
                         <img id="fb-logo" src="/website_facebook/static/src/img/header.jpg" style="width: 100%; max-width:851px"/>
                         <div class="col-md-4 col-xs-12" style="bottom: 20px; left: 20px; position:absolute; ">
                             <div class="col-md-4 col-xs-12">
                                 <img class="img-responsive" id="fb-profil" src="https://www.celebsgonegood.com/images/thumb-lilly-singh.jpg" style="border:5px #fff solid; max-width:100px; height:100px;"/>
                             </div>
-                            <div class="col-md-8 col-xs-12" >
-                                <h3>iisuperwomanii</h3>
+                            <div class="col-md-8 col-xs-12" style="color:#fff; text-shadow: 2px 2px 5px #333;">
+                                <h3><strong>IISuperwomanII</strong><br/>Entertainer</h3>
                             </div>
                         </div>
                     </div>
@@ -128,6 +128,21 @@
             <xpath expr="//body" position="attributes">
                 <attribute name="class">fb-body</attribute>
             </xpath>
+            
+<!--
+            <xpath expr="//main" position="replace">
+                <section>
+                    <div class="container" style="margin-left: 5.3%; width: 100%; max-width: 851px; padding: 0px;">
+                        <div class="col-md-4 col-xs-12" style="padding-left:0;">
+                            <div class="oe_structure oe_empty"/>
+                        </div>
+                        <div class="col-md-8 col-xs-12" style="padding-right:0;">
+                            <div class="oe_structure oe_empty"/>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+-->
         </template>
         
         <!--Insert A Company Description Field To res.company-->
