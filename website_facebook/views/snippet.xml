@@ -88,6 +88,9 @@
                                                         </div>
                                                         <div class="panel-body">
                                                             <i class="fa fa-info-circle" style="color:#DBDCDB;"/> 
+                                                            <t t-if="user_id.company_id.company_desc">
+                                                                <t t-esc="user_id.company_id.company_desc"/>
+                                                            </t>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -520,6 +523,122 @@
                             <img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_well.png"/>
                             <span class="oe_snippet_thumbnail_title">About</span>
                         </div>
+                        <section class="oe_snippet_body mb32 mt16">
+                            <div class="container" style="margin-left: 8%; width: 100%; max-width: 851px; padding: 0px;">
+                                <div class="panel-heading">
+                                    <strong>About <t t-esc="user_id.company_id.name"/></strong>
+                                    <hr/>
+                                </div>
+                            </div>
+                            <div class="container" style="margin-left: 8%; width: 100%; max-width: 851px; padding: 0px;">
+                                <div class="panel-body">
+                                    <div class="col-md-3 col-xs-12" style="padding-left:0;">
+                                        <h4><strong>Page Info</strong></h4>
+                                    </div>
+                                    <div class="col-md-9 col-xs-12" style="padding-right:0; color:#9197A3;">
+                                        <h4><strong>PAGE INFO</strong></h4><hr/>
+                                        <!--COMPANY TAG LINE-->
+                                        <t t-if="user_id.company_id.rml_header1">
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Company Tag Line: </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.rml_header1"/>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--COMPANY DESCRIPTION-->
+                                         <t t-if="user_id.company_id.company_desc">
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Company description </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.company_desc"/>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--ADDRESS-->
+                                        <t t-if="user_id.company_id.partner_id.contact_address">
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Address </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.partner_id.contact_address"/>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--WEBSITE-->
+                                        <t t-if="user_id.company_id.website">
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Website </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <span class="oe_form_field oe_form_field_url">
+                                                            <a class="oe_form_uri" target="_blank" t-att-href="user_id.company_id.website">
+                                                                <t t-esc="user_id.company_id.website"/> 
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--PHONE-->
+                                        <t t-if="user_id.company_id.phone">
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Phone </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.phone"/>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--FAX-->
+                                        <t t-if="user_id.company_id.fax">   
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">                 
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Fax </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.fax" />
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                        <!--EMAIL-->
+                                        <t t-if="user_id.company_id.email">   
+                                            <div class="col-md-12 col-xs-12" style="padding-left: 0px; padding-right: 0px;">         
+                                                <h10>
+                                                    <div class="col-md-4 col-xs-12" style="padding-left: 0px;">
+                                                        <strong>Email </strong>
+                                                    </div>
+                                                    <div class="col-md-8 col-xs-12">
+                                                        <t t-esc="user_id.company_id.email"/>
+                                                    </div>
+                                                </h10><hr/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        
+<!--
                         <section class="oe_snippet_body mb32 mt16">        
                             <div class="container">
                                 <div class="row">
@@ -622,6 +741,7 @@
                                 </div>
                             </div>
                         </section>
+-->
                     </div>
                     <!-- END OF FACEBOOK ABOUT PAGE LAYOUT-->
                     
